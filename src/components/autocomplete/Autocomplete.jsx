@@ -1,29 +1,36 @@
 import React, { useState, memo } from "react";
-import { useHandleChangeText } from "./Autocomplete.utils";
+import {
+  useHandleTextChanged,
+  useHandleTextSelected,
+} from "./Autocomplete.utils";
 
 const Autocomplete = ({}) => {
   const items = ["Ho Chi Minh", "Ha Noi", "Binh Duong", "Ninh Binh"];
   const [suggestions, setSuggestions] = useState([]);
+  const [text, setText] = useState("");
 
-  const handleChangeText = useHandleChangeText({ setSuggestions, items });
+  const handleTextChanged = useHandleTextChanged({
+    setSuggestions,
+    setText,
+    items,
+  });
 
-  const renderSuggestions = () => {
-    if (!suggestions.length) {
-      return null;
-    }
-    return (
-      <ul>
-        {suggestions.map((suggestion, index) => (
-          <li key={index}>{suggestion}</li>
-        ))}
-      </ul>
-    );
-  };
+  const handleTextSelected = useHandleTextSelected({
+    setText,
+    setSuggestions,
+  });
 
   return (
     <div>
-      <input onChange={(e) => handleChangeText(e.target.value)} type="text" />
-      {renderSuggestions()}
+      <input onChange={handleTextChanged} value={text} type="text" />
+      <ul>
+        {!!suggestions.length &&
+          suggestions.map((suggestion, index) => (
+            <li key={index} onClick={() => handleTextSelected(suggestion)}>
+              {suggestion}
+            </li>
+          ))}
+      </ul>
     </div>
   );
 };

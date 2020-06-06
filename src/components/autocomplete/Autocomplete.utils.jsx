@@ -1,9 +1,12 @@
 import React, { useCallback } from "react";
 import { debounce } from "../../utils";
 
-export const useHandleChangeText = ({ setSuggestions, items }) =>
+export const useHandleTextChanged = ({ setSuggestions, setText, items }) =>
   useCallback(
-    debounce((value) => {
+    debounce((e) => {
+      const {
+        target: { value },
+      } = e;
       let suggestions = [];
 
       if (value && value.length > 0) {
@@ -14,6 +17,38 @@ export const useHandleChangeText = ({ setSuggestions, items }) =>
       }
 
       setSuggestions(suggestions);
-    }, 500),
+      setText(value);
+    }, 300),
     [setSuggestions, items]
+  );
+
+// export const useHandleTextChanged = ({ setSuggestions, setText, items }) => {
+//   const debouncedSetSuggestions = debounce(setSuggestions, 500);
+
+//   return useCallback(
+//     (value) => {
+//       let suggestions = [];
+
+//       if (value && value.length > 0) {
+//         console.log("test");
+//         const newVal = value.trim().toUpperCase();
+//         suggestions = items
+//           .sort()
+//           .filter((eachItem) => eachItem.toUpperCase().includes(newVal));
+//       }
+
+//       setText(value);
+//       debouncedSetSuggestions(suggestions);
+//     },
+//     [setSuggestions, setText, items]
+//   );
+// };
+
+export const useHandleTextSelected = ({ setSuggestions, setText }) =>
+  useCallback(
+    (value) => {
+      setText(value);
+      setSuggestions([]);
+    },
+    [setSuggestions, setText]
   );
