@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import Routes from "./routes";
 
-const App = () => {
+const AppComponent = () => {
   return (
     <div className="App">
       <Routes />
@@ -9,4 +9,6 @@ const App = () => {
   );
 };
 
+const App = memo(AppComponent);
+App.displayName = "App";
 export default App;

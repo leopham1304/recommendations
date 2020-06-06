@@ -1,39 +1,39 @@
-import React, { useState, memo } from "react";
-import {
-  useHandleTextChanged,
-  useHandleTextSelected,
-} from "./Autocomplete.utils";
+import React, { memo } from "react";
+import { useAutoComplete } from "./Autocomplete.utils";
+import SuggestionItem from "./suggestion-item/SuggestionItem";
+import "./Autocomplete.css";
 
-const Autocomplete = ({}) => {
-  const items = ["Ho Chi Minh", "Ha Noi", "Binh Duong", "Ninh Binh"];
-  const [suggestions, setSuggestions] = useState([]);
-  const [text, setText] = useState("");
-
-  const handleTextChanged = useHandleTextChanged({
-    setSuggestions,
-    setText,
-    items,
-  });
-
-  const handleTextSelected = useHandleTextSelected({
-    setText,
-    setSuggestions,
-  });
+const AutocompleteComponent = () => {
+  const {
+    handleSearchChange,
+    handleSelect,
+    search,
+    suggestions,
+  } = useAutoComplete();
 
   return (
-    <div>
-      <input onChange={handleTextChanged} value={text} type="text" />
-      {!!suggestions.length && !!text && (
+    <div className="autocomplete">
+      <input
+        onChange={handleSearchChange}
+        placeholder="Try Vietnam"
+        value={search}
+      />
+      {!!suggestions.length && (
         <ul>
-          {suggestions.map((suggestion, index) => (
-            <li key={index} onClick={() => handleTextSelected(suggestion)}>
-              {suggestion}
-            </li>
+          {suggestions.map((suggestion) => (
+            <SuggestionItem
+              key={suggestion}
+              onSelect={handleSelect}
+              suggestion={suggestion}
+            />
           ))}
         </ul>
       )}
     </div>
   );
 };
+
+const Autocomplete = memo(AutocompleteComponent);
+Autocomplete.displayName = "AutoComplete";
 
 export default memo(Autocomplete);

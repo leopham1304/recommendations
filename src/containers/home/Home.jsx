@@ -1,11 +1,14 @@
 import React, { memo } from "react";
-import { Autocomplete } from "../../components";
+import { Autocomplete, NavigationBar } from "../../components";
+import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <Autocomplete />
+    <div className="home-container">
+      <NavigationBar />
+      <div className="autocomplete-wrapper">
+        <Autocomplete />
+      </div>
     </div>
   );
 };

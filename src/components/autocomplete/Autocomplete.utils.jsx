@@ -1,86 +1,57 @@
-import React, { useCallback } from "react";
-import { debounce } from "../../utils";
+import { useState, useMemo, useCallback } from "react";
 
-// export const useHandleTextChanged = ({ setSuggestions, setText, items }) =>
-//   useCallback(
-//     debounce((e) => {
-//       const {
-//         target: { value },
-//       } = e;
-//       let suggestions = [];
+const cities = [
+  "Ho Chi Minh",
+  "Ha Noi",
+  "Binh Dinh",
+  "Ninh Binh",
+  "Hai Phong",
+  "Da Nang",
+];
 
-//       if (value && value.length > 0) {
-//         const newVal = value.trim().toUpperCase();
-//         suggestions = items
-//           .sort()
-//           .filter((eachItem) => eachItem.toUpperCase().includes(newVal));
-//       }
+const filterCities = (cities, keyword) =>
+  !keyword
+    ? []
+    : cities.filter((country) =>
+        country.toLowerCase().includes(keyword.toLowerCase())
+      );
 
-//       setSuggestions(suggestions);
-//       setText(value);
-//     }, 300),
-//     [setSuggestions, items]
-//   );
+const useHandleSearchChange = ({ setSearch, setSuggestions }) =>
+  useMemo(() => {
+    let timerId;
+    return (e) => {
+      const value = e.target.value;
+      setSearch(value);
+      clearTimeout(timerId);
+      timerId = setTimeout(
+        () => setSuggestions(filterCities(cities, value)),
+        300
+      );
+    };
+  }, [setSearch, setSuggestions]);
 
-export const useHandleTextChanged = ({ setSuggestions, setText, items }) => {
-  const debounceTextHandler = useCallback(
-    debounce((e) => {
-      const {
-        target: { value },
-      } = e;
-      let suggestions = [];
-
-      if (value && value.length > 0) {
-        const newVal = value.trim().toUpperCase();
-        suggestions = items
-          .sort()
-          .filter((eachItem) => eachItem.toUpperCase().includes(newVal));
-      }
-
-      setSuggestions(suggestions);
-    }, 300),
-    [setSuggestions, items]
-  );
-
-  return useCallback(
-    (e) => {
-      const {
-        target: { value },
-      } = e;
-      e.persist();
-      setText(value);
-      debounceTextHandler(e);
-    },
-    [debounceTextHandler]
-  );
-};
-// export const useHandleTextChanged = ({ setSuggestions, setText, items }) => {
-//   const debouncedSetSuggestions = debounce(setSuggestions, 500);
-
-//   return useCallback(
-//     (value) => {
-//       let suggestions = [];
-
-//       if (value && value.length > 0) {
-//         console.log("test");
-//         const newVal = value.trim().toUpperCase();
-//         suggestions = items
-//           .sort()
-//           .filter((eachItem) => eachItem.toUpperCase().includes(newVal));
-//       }
-
-//       setText(value);
-//       debouncedSetSuggestions(suggestions);
-//     },
-//     [setSuggestions, setText, items]
-//   );
-// };
-
-export const useHandleTextSelected = ({ setSuggestions, setText }) =>
+const useHandleSelect = ({ setSearch, setSuggestions }) =>
   useCallback(
-    (value) => {
-      setText(value);
+    (suggestion) => {
+      setSearch(suggestion);
       setSuggestions([]);
     },
-    [setSuggestions, setText]
+    [setSearch, setSuggestions]
   );
+
+export const useAutoComplete = () => {
+  const [search, setSearch] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const handleSearchChange = useHandleSearchChange({
+    setSearch,
+    setSuggestions,
+  });
+  const handleSelect = useHandleSelect({ setSearch, setSuggestions });
+
+  return {
+    handleSearchChange,
+    handleSelect,
+    search,
+    suggestions,
+  };
+};
