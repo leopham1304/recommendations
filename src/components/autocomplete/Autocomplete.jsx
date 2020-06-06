@@ -23,14 +23,15 @@ const Autocomplete = ({}) => {
   return (
     <div>
       <input onChange={handleTextChanged} value={text} type="text" />
-      <ul>
-        {!!suggestions.length &&
-          suggestions.map((suggestion, index) => (
+      {!!suggestions.length && !!text && (
+        <ul>
+          {suggestions.map((suggestion, index) => (
             <li key={index} onClick={() => handleTextSelected(suggestion)}>
               {suggestion}
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
     </div>
   );
 };
