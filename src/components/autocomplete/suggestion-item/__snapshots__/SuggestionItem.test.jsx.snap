@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SuggestionItem should render the SuggestionItem Component correctly 1`] = `
+<Memo(SuggestionItem)
+  onSelect={[MockFunction]}
+  suggestion="Test"
+>
+  <li
+    onClick={[Function]}
+  >
+    Test
+  </li>
+</Memo(SuggestionItem)>
+`;

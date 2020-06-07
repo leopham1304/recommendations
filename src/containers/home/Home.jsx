@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { Autocomplete, NavigationBar } from "../../components";
-import "./Home.css";
+import "./Home.scss";
 
 const Home = () => {
   return (

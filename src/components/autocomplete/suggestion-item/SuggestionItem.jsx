@@ -1,12 +1,15 @@
 import React, { memo } from "react";
+import PropTypes from "prop-types";
 import { useHandleSelect } from "./SuggestionItem.utils";
 
-export const SuggestionItemComponent = ({ onSelect, suggestion }) => {
+export const SuggestionItem = ({ onSelect, suggestion }) => {
   const handleSelect = useHandleSelect({ onSelect, suggestion });
   return <li onClick={handleSelect}>{suggestion}</li>;
 };
 
-const SuggestionItem = memo(SuggestionItemComponent);
-SuggestionItem.displayName = "SuggestionItem";
+SuggestionItem.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  suggestion: PropTypes.string.isRequired,
+};
 
-export default SuggestionItem;
+export default memo(SuggestionItem);

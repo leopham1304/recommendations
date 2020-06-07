@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationBar should render the NavigationBar Component correctly 1`] = `
+<nav
+  className="nav-container"
+>
+  <div>
+    <img
+      alt="AirBnB Logo"
+      className="airbnb-logo"
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "airbnb.svg",
+        }
+      }
+    />
+  </div>
+  <div
+    className="nav-menu"
+  >
+    <span>
+      Become a host
+    </span>
+    <span>
+      Help
+    </span>
+    <span>
+      Sign up
+    </span>
+    <span>
+      Log in
+    </span>
+  </div>
+</nav>
+`;

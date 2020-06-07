@@ -1,7 +1,7 @@
 import React, { memo } from "react";
-import "./NavigationBar.css";
+import "./NavigationBar.scss";
 
-export const NavigationBarComponent = ({ onSwitchMode }) => {
+export const NavigationBar = ({ onSwitchMode }) => {
   return (
     <nav className="nav-container">
       <div>
@@ -12,16 +12,13 @@ export const NavigationBarComponent = ({ onSwitchMode }) => {
         />
       </div>
       <div className="nav-menu">
-        <a href="#">Become a host</a>
-        <a href="#">Help</a>
-        <a href="#">Sign up</a>
-        <a href="#">Log in</a>
+        <span>Become a host</span>
+        <span>Help</span>
+        <span>Sign up</span>
+        <span>Log in</span>
       </div>
     </nav>
   );
 };
 
-const NavigationBar = memo(NavigationBarComponent);
-NavigationBar.displayName = "NavigationBar";
-
-export default NavigationBar;
+export default memo(NavigationBar);

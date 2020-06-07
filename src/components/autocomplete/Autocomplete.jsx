@@ -1,9 +1,9 @@
 import React, { memo } from "react";
 import { useAutoComplete } from "./Autocomplete.utils";
 import SuggestionItem from "./suggestion-item/SuggestionItem";
-import "./Autocomplete.css";
+import "./Autocomplete.scss";
 
-const AutocompleteComponent = () => {
+const Autocomplete = () => {
   const {
     handleSearchChange,
     handleSelect,
@@ -32,8 +32,5 @@ const AutocompleteComponent = () => {
     </div>
   );
 };
-
-const Autocomplete = memo(AutocompleteComponent);
-Autocomplete.displayName = "AutoComplete";
 
 export default memo(Autocomplete);

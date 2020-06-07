@@ -1,0 +1,45 @@
+.landing-container {
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../assets/images/sondoong.jpg);
+  color: #fff;
+  height: 100%;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1vw;
+  }
+
+  .introduction-wrapper {
+    top: 15vw;
+    position: relative;
+  }
+
+  .introduction-text {
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 1vw;
+  }
+
+  .landing-button {
+    background-color: #699db6;
+    border-color: rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .landing-button:hover {
+    background-color: #4f87a2;
+    border-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .landing-button:active {
+    background-color: #3c677b;
+    border-color: rgba(0, 0, 0, 0.9);
+  }
+}

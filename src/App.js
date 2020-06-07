@@ -11,4 +11,5 @@ const AppComponent = () => {
 
 const App = memo(AppComponent);
 App.displayName = "App";
+
 export default App;

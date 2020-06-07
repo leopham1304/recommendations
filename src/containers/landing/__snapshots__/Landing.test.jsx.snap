@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing should render the Landing correctly 1`] = `
+<Router
+  history={
+    Object {
+      "listen": [MockFunction] {
+        "calls": Array [
+          Array [
+            [Function],
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+      "location": Object {},
+      "push": [MockFunction],
+    }
+  }
+>
+  <Memo(Landing)>
+    <div
+      className="landing-container"
+    >
+      <div
+        className="introduction-wrapper"
+      >
+        <h1>
+          Hello, welcome to Vietnam!
+        </h1>
+        <div
+          className="introduction-text"
+        >
+          <p>
+            Vietnam is a country divided into 58 provinces
+          </p>
+          <p>
+            There are many heavenly breathtaking landscapes to explore
+          </p>
+        </div>
+        <button
+          className="landing-button"
+          onClick={[Function]}
+        >
+          Fly me to the 
+          <strong>
+             Moon 
+          </strong>
+        </button>
+      </div>
+    </div>
+  </Memo(Landing)>
+</Router>
+`;

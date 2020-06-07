@@ -1,0 +1,14 @@
+.home-container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../assets/images/background.jpg);
+  height: 100%;
+  justify-content: center;
+
+  .autocomplete-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20vh;
+  }
+}

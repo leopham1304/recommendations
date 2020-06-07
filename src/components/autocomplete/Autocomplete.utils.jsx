@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback } from "react";
 
+// constants for demo
 const cities = [
   "Ho Chi Minh",
   "Ha Noi",
@@ -9,13 +10,15 @@ const cities = [
   "Da Nang",
 ];
 
-const filterCities = (cities, keyword) =>
+// filtering cities based on keyword
+export const filterCities = (cities, keyword) =>
   !keyword
     ? []
     : cities.filter((country) =>
         country.toLowerCase().includes(keyword.toLowerCase())
       );
 
+// debounce the search change event so that it only shows suggestions after user stops typing
 const useHandleSearchChange = ({ setSearch, setSuggestions }) =>
   useMemo(() => {
     let timerId;
@@ -30,7 +33,8 @@ const useHandleSearchChange = ({ setSearch, setSuggestions }) =>
     };
   }, [setSearch, setSuggestions]);
 
-const useHandleSelect = ({ setSearch, setSuggestions }) =>
+// handle select event
+export const useHandleSelect = ({ setSearch, setSuggestions }) =>
   useCallback(
     (suggestion) => {
       setSearch(suggestion);
@@ -39,6 +43,7 @@ const useHandleSelect = ({ setSearch, setSuggestions }) =>
     [setSearch, setSuggestions]
   );
 
+// wrap state and handlers
 export const useAutoComplete = () => {
   const [search, setSearch] = useState("");
   const [suggestions, setSuggestions] = useState([]);

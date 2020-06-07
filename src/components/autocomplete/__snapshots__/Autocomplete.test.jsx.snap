@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Autocomplete should render the Autocomplete Component correctly 1`] = `
+<div
+  className="autocomplete"
+>
+  <input
+    onChange={[Function]}
+    placeholder="Try Vietnam"
+    value="Ho"
+  />
+  <ul>
+    <Memo(SuggestionItem)
+      key="Ho Chi Minh"
+      onSelect={[Function]}
+      suggestion="Ho Chi Minh"
+    />
+  </ul>
+</div>
+`;

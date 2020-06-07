@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render the Home correctly 1`] = `
+<div
+  className="home-container"
+>
+  <Memo(NavigationBar) />
+  <div
+    className="autocomplete-wrapper"
+  >
+    <Memo(Autocomplete) />
+  </div>
+</div>
+`;
