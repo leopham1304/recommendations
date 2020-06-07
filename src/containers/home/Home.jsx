@@ -1,13 +1,16 @@
 import React, { memo } from "react";
 import { Autocomplete, NavigationBar } from "../../components";
+import { useHome } from "./Home.utils";
 import "./Home.scss";
 
 const Home = () => {
+  const { darkMode, setDarkMode } = useHome();
+
   return (
-    <div className="home-container">
-      <NavigationBar />
+    <div className={darkMode ? "home-container dark-mode" : "home-container"}>
+      <NavigationBar setDarkMode={setDarkMode} darkMode={darkMode} />
       <div className="autocomplete-wrapper">
-        <Autocomplete />
+        <Autocomplete darkMode={darkMode} />
       </div>
     </div>
   );

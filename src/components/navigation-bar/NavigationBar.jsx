@@ -1,7 +1,8 @@
 import React, { memo } from "react";
+import PropTypes from "prop-types";
 import "./NavigationBar.scss";
 
-export const NavigationBar = ({ onSwitchMode }) => {
+export const NavigationBar = ({ setDarkMode, darkMode }) => {
   return (
     <nav className="nav-container">
       <div>
@@ -12,6 +13,16 @@ export const NavigationBar = ({ onSwitchMode }) => {
         />
       </div>
       <div className="nav-menu">
+        <span className="toggle">
+          <input
+            checked={darkMode}
+            onChange={() => setDarkMode((prevMode) => !prevMode)}
+            id="checkbox"
+            className="checkbox"
+            type="checkbox"
+          />
+          <label htmlFor="checkbox" />
+        </span>
         <span>Become a host</span>
         <span>Help</span>
         <span>Sign up</span>
@@ -19,6 +30,11 @@ export const NavigationBar = ({ onSwitchMode }) => {
       </div>
     </nav>
   );
+};
+
+NavigationBar.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  setDarkMode: PropTypes.func.isRequired,
 };
 
 export default memo(NavigationBar);

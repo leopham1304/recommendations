@@ -11,10 +11,10 @@ const Landing = () => {
         <h1>Hello, welcome to Vietnam!</h1>
         <div className="introduction-text">
           <p>Vietnam is a country divided into 58 provinces</p>
-          <p>There are many heavenly breathtaking landscapes to explore</p>
+          <p>There are many heavenly landscapes to explore</p>
         </div>
         <button onClick={handleButtonClicked} className="landing-button">
-          Fly me to the <strong> Moon </strong>
+          Search <strong> Vietnam </strong>
         </button>
       </div>
     </div>

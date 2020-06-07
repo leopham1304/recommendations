@@ -12,7 +12,7 @@ describe("Landing", () => {
     </Router>
   );
 
-  it("should render the Landing correctly", () => {
+  it("should render the Landing container correctly", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 

@@ -13,7 +13,7 @@ jest
   .mockImplementationOnce(() => realUseState(["Ho Chi Minh"]));
 
 describe("Autocomplete", () => {
-  const wrapper = shallow(<Autocomplete />);
+  const wrapper = shallow(<Autocomplete darkMode={false} />);
 
   it("should render the Autocomplete Component correctly", () => {
     expect(toJson(wrapper)).toMatchSnapshot();

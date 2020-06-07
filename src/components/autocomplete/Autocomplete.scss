@@ -2,21 +2,20 @@
   font-size: 18px;
   border: none;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  color: #484848;
   width: 70vw;
   max-width: 600px;
 
   input {
-    font-size: 20px;
-    font-weight: 600;
     background: url(../../assets/images/search.svg) #f8f8f8 no-repeat scroll
       15px center;
+    border: 1px solid #e3dfdf;
+    color: #484848;
+    font-size: 20px;
+    font-weight: 600;
     width: 100%;
     padding: 15px 55px;
-    color: #484848;
     box-sizing: border-box;
     outline: none;
-    border: 1px solid #e3dfdf;
   }
 
   input:placeholder-shown {
@@ -28,22 +27,41 @@
   }
 
   ul {
+    border: 1px solid #ebebeb;
     list-style-type: none;
     text-align: left;
     margin: 0;
     padding: 0;
-    border: 1px solid #ebebeb;
     border-radius: 0px 0px 4px 4px;
   }
 
   li {
+    background-color: #fff;
     padding: 18px 20px;
     cursor: pointer;
     box-sizing: content-box;
-    background-color: #fff;
   }
 
   li:hover {
     background-color: #f8f8f8;
+  }
+}
+
+.dark-mode {
+  input {
+    background: url(../../assets/images/search.svg) #0e0e0e no-repeat scroll
+      15px center;
+    border: 1px solid #565656;
+    color: #cdcdcd;
+  }
+  ul {
+    border: 1px solid #565656;
+  }
+  li {
+    background-color: #1b1b1b;
+    color: #cdcdcd;
+  }
+  li:hover {
+    background-color: #565656;
   }
 }

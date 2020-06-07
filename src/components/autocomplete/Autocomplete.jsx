@@ -1,20 +1,21 @@
 import React, { memo } from "react";
 import { useAutoComplete } from "./Autocomplete.utils";
 import SuggestionItem from "./suggestion-item/SuggestionItem";
+import PropTypes from "prop-types";
 import "./Autocomplete.scss";
 
-const Autocomplete = () => {
+const Autocomplete = ({ darkMode }) => {
   const {
-    handleSearchChange,
-    handleSelect,
+    handleSearchChanged,
+    handleSuggestionSelected,
     search,
     suggestions,
   } = useAutoComplete();
 
   return (
-    <div className="autocomplete">
+    <div className={darkMode ? "autocomplete dark-mode" : "autocomplete"}>
       <input
-        onChange={handleSearchChange}
+        onChange={handleSearchChanged}
         placeholder="Try Vietnam"
         value={search}
       />
@@ -23,7 +24,7 @@ const Autocomplete = () => {
           {suggestions.map((suggestion) => (
             <SuggestionItem
               key={suggestion}
-              onSelect={handleSelect}
+              onSelect={handleSuggestionSelected}
               suggestion={suggestion}
             />
           ))}
@@ -31,6 +32,10 @@ const Autocomplete = () => {
       )}
     </div>
   );
+};
+
+Autocomplete.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
 };
 
 export default memo(Autocomplete);

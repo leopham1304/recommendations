@@ -5,10 +5,14 @@
   background-image: url(../../assets/images/background.jpg);
   height: 100%;
   justify-content: center;
+}
 
-  .autocomplete-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 20vh;
-  }
+.dark-mode {
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.85);
+}
+
+.autocomplete-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
 }

@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from "react";
 
-// constants for demo
+// cities constant for demo, can be a larger list or fetch data from API
 const cities = [
   "Ho Chi Minh",
   "Ha Noi",
@@ -19,7 +19,7 @@ export const filterCities = (cities, keyword) =>
       );
 
 // debounce the search change event so that it only shows suggestions after user stops typing
-const useHandleSearchChange = ({ setSearch, setSuggestions }) =>
+export const useHandleSearchChanged = ({ setSearch, setSuggestions }) =>
   useMemo(() => {
     let timerId;
     return (e) => {
@@ -34,7 +34,7 @@ const useHandleSearchChange = ({ setSearch, setSuggestions }) =>
   }, [setSearch, setSuggestions]);
 
 // handle select event
-export const useHandleSelect = ({ setSearch, setSuggestions }) =>
+export const useHandleSuggestionSelected = ({ setSearch, setSuggestions }) =>
   useCallback(
     (suggestion) => {
       setSearch(suggestion);
@@ -47,15 +47,18 @@ export const useHandleSelect = ({ setSearch, setSuggestions }) =>
 export const useAutoComplete = () => {
   const [search, setSearch] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  const handleSearchChange = useHandleSearchChange({
+  const handleSearchChanged = useHandleSearchChanged({
     setSearch,
     setSuggestions,
   });
-  const handleSelect = useHandleSelect({ setSearch, setSuggestions });
+  const handleSuggestionSelected = useHandleSuggestionSelected({
+    setSearch,
+    setSuggestions,
+  });
 
   return {
-    handleSearchChange,
-    handleSelect,
+    handleSearchChanged,
+    handleSuggestionSelected,
     search,
     suggestions,
   };

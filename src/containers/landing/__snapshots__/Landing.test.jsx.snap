@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Landing should render the Landing correctly 1`] = `
+exports[`Landing should render the Landing container correctly 1`] = `
 <Router
   history={
     Object {
@@ -39,16 +39,16 @@ exports[`Landing should render the Landing correctly 1`] = `
             Vietnam is a country divided into 58 provinces
           </p>
           <p>
-            There are many heavenly breathtaking landscapes to explore
+            There are many heavenly landscapes to explore
           </p>
         </div>
         <button
           className="landing-button"
           onClick={[Function]}
         >
-          Fly me to the 
+          Search 
           <strong>
-             Moon 
+             Vietnam 
           </strong>
         </button>
       </div>

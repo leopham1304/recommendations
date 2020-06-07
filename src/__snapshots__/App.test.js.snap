@@ -67,16 +67,16 @@ exports[`App should render App without crashing 1`] = `
                         Vietnam is a country divided into 58 provinces
                       </p>
                       <p>
-                        There are many heavenly breathtaking landscapes to explore
+                        There are many heavenly landscapes to explore
                       </p>
                     </div>
                     <button
                       className="landing-button"
                       onClick={[Function]}
                     >
-                      Fly me to the 
+                      Search 
                       <strong>
-                         Moon 
+                         Vietnam 
                       </strong>
                     </button>
                   </div>

@@ -1,14 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home should render the Home correctly 1`] = `
-<div
-  className="home-container"
->
-  <Memo(NavigationBar) />
+exports[`Home should render the Home container correctly 1`] = `
+<Memo(Home)>
   <div
-    className="autocomplete-wrapper"
+    className="home-container"
   >
-    <Memo(Autocomplete) />
+    <Memo(NavigationBar)
+      darkMode={false}
+      setDarkMode={[Function]}
+    >
+      <nav
+        className="nav-container"
+      >
+        <div>
+          <img
+            alt="AirBnB Logo"
+            className="airbnb-logo"
+            src={
+              Object {
+                "ReactComponent": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+                "__esModule": true,
+                "default": "airbnb.svg",
+              }
+            }
+          />
+        </div>
+        <div
+          className="nav-menu"
+        >
+          <span
+            className="toggle"
+          >
+            <input
+              checked={false}
+              className="checkbox"
+              id="checkbox"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            <label
+              htmlFor="checkbox"
+            />
+          </span>
+          <span>
+            Become a host
+          </span>
+          <span>
+            Help
+          </span>
+          <span>
+            Sign up
+          </span>
+          <span>
+            Log in
+          </span>
+        </div>
+      </nav>
+    </Memo(NavigationBar)>
+    <div
+      className="autocomplete-wrapper"
+    >
+      <Memo(Autocomplete)
+        darkMode={false}
+      >
+        <div
+          className="autocomplete"
+        >
+          <input
+            onChange={[Function]}
+            placeholder="Try Vietnam"
+            value=""
+          />
+        </div>
+      </Memo(Autocomplete)>
+    </div>
   </div>
-</div>
+</Memo(Home)>
 `;

@@ -14,7 +14,7 @@
   }
 
   .introduction-wrapper {
-    top: 15vw;
+    top: 120px;
     position: relative;
   }
 
@@ -25,21 +25,18 @@
   }
 
   .landing-button {
-    background-color: #699db6;
+    background-color: #5a4d41;
     border-color: rgba(0, 0, 0, 0.3);
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
     color: #fff;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
   }
 
   .landing-button:hover {
-    background-color: #4f87a2;
+    background-color: burlywood;
     border-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .landing-button:active {
-    background-color: #3c677b;
-    border-color: rgba(0, 0, 0, 0.9);
   }
 }

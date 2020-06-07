@@ -1,40 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NavigationBar should render the NavigationBar Component correctly 1`] = `
-<nav
-  className="nav-container"
+<Memo(NavigationBar)
+  darkMode={false}
+  setDarkMode={[MockFunction]}
 >
-  <div>
-    <img
-      alt="AirBnB Logo"
-      className="airbnb-logo"
-      src={
-        Object {
-          "ReactComponent": Object {
-            "$$typeof": Symbol(react.forward_ref),
-            "render": [Function],
-          },
-          "__esModule": true,
-          "default": "airbnb.svg",
-        }
-      }
-    />
-  </div>
-  <div
-    className="nav-menu"
+  <nav
+    className="nav-container"
   >
-    <span>
-      Become a host
-    </span>
-    <span>
-      Help
-    </span>
-    <span>
-      Sign up
-    </span>
-    <span>
-      Log in
-    </span>
-  </div>
-</nav>
+    <div>
+      <img
+        alt="AirBnB Logo"
+        className="airbnb-logo"
+        src={
+          Object {
+            "ReactComponent": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+            "__esModule": true,
+            "default": "airbnb.svg",
+          }
+        }
+      />
+    </div>
+    <div
+      className="nav-menu"
+    >
+      <span
+        className="toggle"
+      >
+        <input
+          checked={false}
+          className="checkbox"
+          id="checkbox"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          htmlFor="checkbox"
+        />
+      </span>
+      <span>
+        Become a host
+      </span>
+      <span>
+        Help
+      </span>
+      <span>
+        Sign up
+      </span>
+      <span>
+        Log in
+      </span>
+    </div>
+  </nav>
+</Memo(NavigationBar)>
 `;

@@ -1,16 +1,20 @@
 import { renderHook } from "@testing-library/react-hooks";
-import { useHandleSelect, filterCities } from "./Autocomplete.utils";
+import {
+  useHandleSuggestionSelected,
+  filterCities,
+  useHandleSearchChanged,
+} from "./Autocomplete.utils";
 
 const setSearchMock = jest.fn();
 const setSuggestionsMock = jest.fn();
 
 describe("Autocomplete.utils", () => {
-  describe("useHandleSelect", () => {
+  describe("useHandleSuggestionSelected", () => {
     it("should work properly", () => {
       const {
         result: { current: onSelect },
       } = renderHook(() =>
-        useHandleSelect({
+        useHandleSuggestionSelected({
           setSearch: setSearchMock,
           setSuggestions: setSuggestionsMock,
         })
