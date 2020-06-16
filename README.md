@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple demo app which contains a landing page and some React custom made components. The Autocomplete component is made fully manually without using any UI Library. Other techniques used are React Hooks and React Router.
 
 ## Available Scripts
 
