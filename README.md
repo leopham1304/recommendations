@@ -1,4 +1,4 @@
-This is a simple demo app which contains a landing page and some React custom made components. The Autocomplete component is made fully manually without using any UI Library with Debouncing feature. Other techniques used are React Hooks and React Router.
+This is a simple demo app which contains a landing page and some React custom made components. The Autocomplete component is made fully manually without using any UI Library with Debouncing feature. Other techniques used are React Hooks and React Router on the logic side, and dark-light mode on the UI side.
 
 ## Available Scripts
 
